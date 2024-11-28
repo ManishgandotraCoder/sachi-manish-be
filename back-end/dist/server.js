@@ -15,7 +15,6 @@ const port = process.env.PORT || 3000;
 // Middleware to parse JSON bodies
 app.use(body_parser_1.default.json());
 app.use((0, cors_1.default)());
-// Create a transport for sending emails using your email provider
 const transporter = nodemailer_1.default.createTransport({
   host: "smtp.gmail.com",
   port: 465,
