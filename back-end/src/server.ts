@@ -3,6 +3,7 @@ import { Request, Response, Application } from "express";
 import nodemailer from "nodemailer";
 import bodyParser from "body-parser";
 import cors from "cors";
+import path from "path";
 
 require("dotenv").config();
 
@@ -12,18 +13,21 @@ const port = process.env.PORT || 3000;
 // Middleware to parse JSON bodies
 app.use(bodyParser.json());
 app.use(cors());
-// Create a transport for sending emails using your email provider
 const transporter = nodemailer.createTransport({
-  host: "smtp.gmail.com", // Gmail's SMTP server
-  port: 465, // Secure port for SSL
-  secure: true, // Use SSL
-  service: "gmail", // You can use other email services like Yahoo, Outlook, etc.
+  host: "smtp.gmail.com",
+  port: 465,
+  secure: true,
+  service: "gmail",
   auth: {
-    user: process.env.SENDER_EMAIL, // Replace with your email
-    pass: process.env.SENDER_PASSWORD, // Replace with your email password or app-specific password
+    user: process.env.SENDER_EMAIL,
+    pass: process.env.SENDER_PASSWORD,
   },
 });
+app.use("/assets", express.static(path.join(__dirname, "assets")));
 
+app.get("/", (req, res) => {
+  res.sendFile(path.join(__dirname, "../dist2/", "index.html"));
+});
 app.post("/send-email", (req: Request, res: Response): void => {
   const {
     subject,
@@ -70,7 +74,7 @@ app.post("/send-email", (req: Request, res: Response): void => {
     res.status(200).json({ message: "Email sent successfully", info });
   });
 });
-app.get("/", (req: Request, res: Response): void => {
+app.get("/api", (req: Request, res: Response): void => {
   res.send("Welcome to Manish Gandotra testing domain");
 });
 // Start the server
