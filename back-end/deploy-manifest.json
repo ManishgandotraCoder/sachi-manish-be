@@ -35,12 +35,5 @@
         "src": "default"
       }
     }
-  ],
-  "computeResources": [
-    {
-      "name": "default",
-      "runtime": "nodejs18.x",
-      "entrypoint": "src/server.ts"
-    }
   ]
 }
