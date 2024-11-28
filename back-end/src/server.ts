@@ -19,8 +19,8 @@ const transporter = nodemailer.createTransport({
   secure: true,
   service: "gmail",
   auth: {
-    user: process.env.SENDER_EMAIL,
-    pass: process.env.SENDER_PASSWORD,
+    user: `speedupyourdreams@gmail.com`,
+    pass: `cqwl tzzu smdn jfcj`,
   },
 });
 app.use("/assets", express.static(path.join(__dirname, "assets")));
