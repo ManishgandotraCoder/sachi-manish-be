@@ -10,7 +10,7 @@ const SelectedBlog = () => {
   const hrefFields = [{ name: "Contact", path: "#contact" }];
   const navFields = [
     { name: "Home", path: "/#" },
-    { name: "Blog", path: "/blogs#" },
+    { name: "Blogs", path: "/blogs#" },
   ];
 
   const [headerClass, setHeaderClass] = useState<string>("");

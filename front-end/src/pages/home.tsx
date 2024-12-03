@@ -16,7 +16,7 @@ const navFields = [
   { name: "What I do", path: "#whatIdo" },
   { name: "Portfolio", path: "#portfolio" },
   { name: "Resume", path: "#resume" },
-  { name: "Blog", path: "#blog" },
+  { name: "Blogs", path: "#blog" },
   { name: "Contact", path: "#contact" },
 ];
 function HomeComponent() {

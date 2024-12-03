@@ -20678,3 +20678,8 @@ body.white-version {
 }
 
 /*# sourceMappingURL=../maps/style.css.map */
+.contact-btn {
+  font-size: 14px;
+  padding: 17px 19px;
+  line-height: 21px;
+}
